@@ -1,0 +1,10 @@
+*
+!.gitignore
+!/content
+!/content**
+!/data
+!/data**
+!/scripts
+!/scripts**
+!/styles
+!/styles**
