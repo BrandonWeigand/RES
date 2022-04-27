@@ -1,0 +1,23 @@
+/* POINTER EVENTS */
+/* turn off all pointer events */
+body *{
+    pointer-events: none;
+}
+/* turn on pointer events only for those who need them */
+body [onclick],
+body [onmousedown],
+body [onmouseup],
+body [onmouseover],
+body [onmouseout],
+body [onmousemove],
+body [ondblclick],
+body [oncontextmenu],
+body [href],
+body [xlink],
+body [for],
+body [type='button'],
+body [type='submit'],
+body [type='reset'],
+body input {
+    pointer-events: all;
+}

@@ -1,0 +1,83 @@
+:root {/* default values if not set by the element */
+  --animate_speed: 1s;
+  --animate_delay: 0s;
+  --animate_curve: ease-in-out;
+}
+
+[animate-color]{/* animate graphics,  color and transparency */
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: alpha, background-color, border-color, caret-color, color, fill, fill-opacity, filter, flood-color, lighting-color, opacity, outline-color, scrollbar-color, stroke, stroke-opacity, text-decoration-color, text-emphasis-color;
+}
+
+[animate-position]{/* animate location,  rotation nd path*/
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: angle, bottom, cx, cy, d, left, right, rotation, rx, ry, top, transform, x, y;
+}
+
+[animate-size]{/* animate layout,  width,  height,  padding,  scale */
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: border, font-size, h, height, line-height, outline, padding, scale, scalex, scaley, stroke-width, transform, w, width;
+}
+
+/* ALLOW DUAL ATTR CHAIN */
+
+[animate-color-position], 
+[animate-position-color]{/* position and color */
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: alpha, angle, background-color, border-color, bottom, caret-color, color, cx, cy, d, fill, fill-opacity, filter, flood-color, left, lighting-color, opacity, outline-color, right, rotation, rx, ry, scrollbar-color, stroke, stroke-opacity, text-decoration-color, text-emphasis-color, top, transform, x, y;
+}
+
+
+[animate-position-size], 
+[animate-size-position]{/* position and size */
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: angle, border, bottom, cx, cy, d, font-size, h, height, left, line-height, outline, padding, right, rotation, rx, ry, scale, scalex, scaley, stroke-width, top, transform, transform, w, width, x, y;
+}
+
+[animate-color-size], 
+[animate-size-color]{/* size and color */
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: alpha, background-color, border, border-color, caret-color, color, fill, fill-opacity, filter, flood-color, font-size, h, height, lighting-color, line-height, opacity, outline, outline-color, padding, scale, scalex, scaley, scrollbar-color, stroke, stroke-opacity, stroke-width, text-decoration-color, text-emphasis-color, transform, w, width;
+}
+
+/* allow tripple attribute chain */
+[animate], 
+[animate-size-color-position], 
+[animate-size-position-color], 
+[animate-color-position-size], 
+[animate-color-size-position]
+[animate-position-color-size], 
+[animate-position-size-color]{/* animate all */
+  transition-duration: var(--animate_speed);
+  transition-delay: var(--animate_delay);
+  transition-timing-function: var(--animate_curve);
+  transition-property: all, alpha, angle, background-color, border, border-color, bottom, caret-color, color, cx, cy, d, fill, fill-opacity, filter, flood-color, font-size, h, height, left, lighting-color, line-height, opacity, outline, outline-color, padding, right, rotation, rx, ry, scale, scalex, scaley, scrollbar-color, stroke, stroke-opacity, stroke-width, text-decoration-color, text-emphasis-color, top, transform, transform, w, width, x, y;
+}
+
+
+/* OVERRIDE VARS IS ATTR IS SET */
+
+[animate-curve] {
+  transition-timing-function: var(--animate_curve);
+  transition-timing-function: attr(animate-curve);
+}
+[animate-delay] {
+  transition-delay: var(--animate_delay);
+  transition-delay: attr(animate-delay);
+}
+[animate-speed] {
+  transition-duration: var(--animate_speed);
+  transition-duration: attr(animate-speed);
+}

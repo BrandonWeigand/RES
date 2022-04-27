@@ -1,0 +1,21 @@
+/* TOOLTIP */
+/* tooltips are non-interactive info displays that show when relivent */
+
+[tooltip]::after{
+    --tooltip_offx:-50%;
+    --tooltop_offy:-75%;
+    pointer-events: none;
+    background-image: url('/RES/content/backgrounds/tooltip.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+[tooltip]:hover::after,
+[tooltip]:active::after,
+[tooltip]:focus::after{
+    position: absolute;
+    content:attr(tooltip);
+    float: left;
+    transform: translate(var(--tooltip_offx),var(--tooltop_offy));
+}
